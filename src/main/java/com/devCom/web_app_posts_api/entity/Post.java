@@ -21,7 +21,7 @@ public class Post {
     private String descriptions;
     private BigDecimal charges;
     private String[] contact;
-    private String[] images;
+    private List<ImageData> images;
     private List<Feedback> feedbacks;
 
 }
