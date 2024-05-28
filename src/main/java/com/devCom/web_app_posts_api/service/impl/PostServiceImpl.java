@@ -10,6 +10,7 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Optional;
 
 @RequiredArgsConstructor
@@ -69,5 +70,23 @@ public class PostServiceImpl implements PostService {
             return "Delete Post Failed";
         }
     }
+//------------------------------------Upadate System--------------------------------------
+    @Override
+    public void update(RequestPostDto postDto, String id) {
+
+        Optional<Post> post1 = postRepository.findById(id);
+        if (post1.isPresent()) {
+            Post post = post1.get();
+            post.setTitle(postDto.getTitle());
+            post.setDescriptions(postDto.getDescriptions());
+            post.setCharges(postDto.getCharges());
+            post.setContact(postDto.getContact());
+            post.setImages(postDto.getImages());
+            post.setFeedbacks(postDto.getFeedbacks());
+            postRepository.save(post);
+        }
+
+    }
+
 
 }

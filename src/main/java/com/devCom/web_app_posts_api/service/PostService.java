@@ -9,5 +9,6 @@ public interface PostService {
 
     String deletePost(String id);
 
+    public void update(RequestPostDto postDto, String id);
 
 }
