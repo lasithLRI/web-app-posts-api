@@ -59,4 +59,15 @@ public class PostServiceImpl implements PostService {
 
     }
 
+
+    @Override
+    public String deletePost(String id) {
+        if(postRepository.existsById(id)){
+            postRepository.deleteById(id);
+            return "Delete Post Successfully";
+        }else {
+            return "Delete Post Failed";
+        }
+    }
+
 }

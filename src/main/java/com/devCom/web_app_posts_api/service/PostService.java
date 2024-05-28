@@ -7,4 +7,7 @@ public interface PostService {
     public void savePost(RequestPostDto postDto);
     public void addComment(RequestFeedBackDto feedBackDto, String id);
 
+    String deletePost(String id);
+
+
 }
